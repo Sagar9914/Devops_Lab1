@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Sagar9914/Devops_Lab1.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building Application'
@@ -23,8 +17,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying Application'
+                sh '''
+                mkdir -p deployment
+                cp -r * deployment/
+                '''
+                echo 'Deployment Successful'
             }
         }
     }
 }
+``

@@ -17,10 +17,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                mkdir -p deployment
-                cp -r * deployment/
-                '''
                 echo 'Deployment Successful'
             }
         }
